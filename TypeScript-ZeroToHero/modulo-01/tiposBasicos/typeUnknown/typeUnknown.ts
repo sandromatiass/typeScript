@@ -35,7 +35,7 @@ if(typeof algumaCoisaUnknown === 'number'){
 
 /*
 Porque um da erro e o outro não é pq o metodo toFixed ele e do tipo number prototype uma vez que estamos
-utilizando o any ele não fará uma verificação e o valor e numérico.
+utilizando o any ele não fará uma verificação e o valor e numérico. ==>
 
 Já o Unknown faz a verificação para resolver criar um if para melhorar o código para que o o mesmo não quebre.
 
