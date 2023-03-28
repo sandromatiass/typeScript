@@ -40,6 +40,5 @@ const concluidaTarefa = {
     descrição: 'Parabéns! Tarefa concluida com sucesso!',
 };
 if (concluidaTarefa.status === Tarefa.Done) {
-    
     console.log('Enviar e-mail: Tarefa Concluida.');
 }
