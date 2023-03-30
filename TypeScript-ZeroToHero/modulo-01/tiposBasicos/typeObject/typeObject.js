@@ -12,10 +12,51 @@ function onboarding01(funcionario) {
     return 'Seja bem vindo(a)' + funcionario.nome;
 }
 console.log(onboarding01({ nome: ' Sandro matias' }));
-// ==> Exemplo 03 - object nomeados
-// ==> Exemplo 04 - object como o type alias (usando interface)
-// ==> Exemplo 05 - usando optional no object
-// ==> Exemplo 06 - Propiedade 'readonly' (se deseja proibir que os devs não modifiquem um determinado objeto use o readonly.)
+function onboarding02(pessoa) {
+    return ('Seja bem-vinda' +
+        pessoa.nome +
+        '!' +
+        'Sua função aqui na empresa será' +
+        pessoa.funcao +
+        '.');
+}
+console.log(onboarding02({ nome: ' Sandro', funcao: ' Sofredor' }));
+function onboarding03(pessoa) {
+    return ('Seja bem-vinda' +
+        pessoa.nome +
+        '!' +
+        'Sua função aqui na empresa será' +
+        pessoa.funcao +
+        '.' +
+        'Você irá trabalhar com a linguagem' +
+        pessoa.linguagem +
+        '.');
+}
+console.log(onboarding03({ nome: ' Sandro', funcao: ' Sofredor', linguagem: ' JavaScript' }));
+function onboarding05(pessoa) {
+    return ('Seja bem-vinda' +
+        pessoa.nome +
+        '!' +
+        'Sua função aqui na empresa será' +
+        pessoa.funcao +
+        '.' +
+        'Você irá trabalhar com a linguagem' +
+        pessoa.linguagem +
+        '.');
+}
+console.log(onboarding05({ nome: ' Sandro', funcao: ' Sofredor', linguagem: ' JavaScript' }));
+function onboarding06(pessoa) {
+    return ('Seja bem-vinda' +
+        pessoa.nome +
+        '!' +
+        'Sua função aqui na empresa será' +
+        pessoa.funcao +
+        '.' +
+        'Você irá trabalhar com a linguagem' +
+        pessoa.linguagem +
+        '.');
+}
+console.log(onboarding06({ nome: ' Sandro', funcao: ' Sofredor', linguagem: ' JavaScript' }));
 // ==> Exemplo 07 - Tipos de extenções (heranças)
 // ==> Exemplo 08 - Tipos de Interseções
 // ==> Exemplo 09 - Generic Objects
