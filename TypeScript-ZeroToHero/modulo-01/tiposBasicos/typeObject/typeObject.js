@@ -54,10 +54,35 @@ function onboarding06(pessoa) {
         '.' +
         'Você irá trabalhar com a linguagem' +
         pessoa.linguagem +
+        '.' +
+        'Seu e-mal será' +
+        pessoa.email +
         '.');
 }
-console.log(onboarding06({ nome: ' Sandro', funcao: ' Sofredor', linguagem: ' JavaScript' }));
-// ==> Exemplo 07 - Tipos de extenções (heranças)
-// ==> Exemplo 08 - Tipos de Interseções
-// ==> Exemplo 09 - Generic Objects
-// ==> Exemplo 01
+console.log(onboarding06({ nome: ' Sandro', funcao: ' Sofredor', linguagem: ' JavaScript', email: 'sandromatias@hotmail.com' }));
+const filha = {
+    nome: 'Sandro',
+    sobrenome: 'Matias',
+    idade: 28
+};
+console.log(filha);
+const usuario = {
+    nome: 'Sandro Matias',
+    email: 'sandromatias@hotmail.com'
+};
+const admin = {
+    nome: 'Sandro Matias',
+    email: 'sandromatias@hotmail.com',
+    admin: true
+};
+//Criando uma função generica para que tanto o type usuario ou admin acessem
+// O T e utilizado para informar que a função e generica e pode ser utilizado em varios paramentros e propiedades
+function acessarSistema(usuario) {
+    return usuario;
+}
+console.log(acessarSistema(usuario));
+console.log(acessarSistema(admin));
+// function acessarSistema (usuario: Usuario): Usuario {
+//     return usuario;
+// }
+// console.log(acessarSistema(usuario));

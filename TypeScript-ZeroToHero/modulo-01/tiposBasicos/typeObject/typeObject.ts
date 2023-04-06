@@ -97,7 +97,7 @@ interface Pessoa06 {
     funcao: string;
     linguagem: string;
     //aqui ela informa que a propiedade e um dado opcional
-    email?: string;
+   readonly email: string;
 }
 
 
@@ -111,16 +111,85 @@ function onboarding06(pessoa: Pessoa05){
         '.' +
         'Você irá trabalhar com a linguagem' +
         pessoa.linguagem +
+        '.' + 
+        'Seu e-mal será' + 
+        pessoa.email +
         '.'
     );
 }
 
-console.log(onboarding06({nome: ' Sandro', funcao: ' Sofredor', linguagem: ' JavaScript'}))
+console.log(onboarding06({nome: ' Sandro', funcao: ' Sofredor', linguagem: ' JavaScript',email: 'sandromatias@hotmail.com'}))
 
 // ==> Exemplo 07 - Tipos de extenções (heranças)
 
+interface Mae {
+    nome: string;
+}
+
+interface Pai {
+    sobrenome: string;
+}
+
+interface Filha extends Mae, Pai {
+    idade: number;
+}
+
+const filha: Filha = {
+    nome: 'Sandro',
+    sobrenome: 'Matias',
+    idade: 28
+}
+
+console.log(filha)
+
 // ==> Exemplo 08 - Tipos de Interseções
+
+interface Cachorro {
+    tipo: string;
+}
+
+interface Gato{
+    tipo: string;
+}
+
+type Animal = Cachorro & Gato;
 
 // ==> Exemplo 09 - Generic Objects
 
-// ==> Exemplo 01
+type Usuario = {
+    nome: string;
+    email: string;
+}
+
+type Admin = {
+    nome: string;
+    email: string;
+    admin: true;
+}
+
+const usuario: Usuario = {
+    nome: 'Sandro Matias',
+    email: 'sandromatias@hotmail.com'
+}
+
+const admin: Admin = {
+    nome: 'Sandro Matias',
+    email: 'sandromatias@hotmail.com',
+    admin: true
+}
+
+//Criando uma função generica para que tanto o type usuario ou admin acessem
+// O T e utilizado para informar que a função e generica e pode ser utilizado em varios paramentros e propiedades
+function acessarSistema<T>(usuario: T): T {
+    return usuario
+}
+
+console.log(acessarSistema<Usuario>(usuario));
+console.log(acessarSistema<Admin>(admin));
+
+
+// function acessarSistema (usuario: Usuario): Usuario {
+//     return usuario;
+// }
+
+// console.log(acessarSistema(usuario));
